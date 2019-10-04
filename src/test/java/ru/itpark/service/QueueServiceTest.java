@@ -109,4 +109,16 @@ class QueueServiceTest {
 
         assertSame(null, name);
     }
+
+    @Test
+    public void shouldGetFirstNameAndRemoveFromQueue() {
+        QueueService service = new QueueService();
+        service.addToTheEnd("A001");
+        service.addToTheEnd("B002");
+
+        String name = service.getFirstNameAndRemoveFromQueue();
+
+        assertEquals(1, service.getLength());
+        assertSame("A001", name);
+    }
 }
