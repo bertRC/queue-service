@@ -33,4 +33,20 @@ public class QueueService {
         }
     }
 
+    public void addToTheEnd(String name) {
+        QueueElement newElement = new QueueElement(name);
+        addToTheEnd(newElement);
+    }
+
+    public void addToTheEnd(QueueElement newElement) {
+        if (first == null) {
+            first = newElement;
+        } else {
+            QueueElement element = first;
+            while (element.getNext() != null) {
+                element = element.getNext();
+            }
+            element.setNext(newElement);
+        }
+    }
 }
