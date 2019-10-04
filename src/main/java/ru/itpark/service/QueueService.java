@@ -10,4 +10,15 @@ public class QueueService {
     public void setFirst(QueueElement first) {
         this.first = first;
     }
+
+    public int getLength() {
+        int length = 0;
+        QueueElement element = first;
+        while (element != null) {
+            length++;
+            element = element.getNext();
+        }
+        return length;
+    }
+
 }
