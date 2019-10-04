@@ -85,4 +85,19 @@ class QueueServiceTest {
 
         assertSame(null, elementWillBeDeleted);
     }
+
+    @Test
+    public void shouldGetFirstAndRemoveFromQueue() {
+        QueueElement firstElement = new QueueElement("Рђ001");
+        QueueElement secondElement = new QueueElement("Рџ002");
+        QueueService service = new QueueService();
+        service.addToTheEnd(firstElement);
+        service.addToTheEnd(secondElement);
+
+        QueueElement elementWillBeDeleted = service.getFirstAndRemoveFromQueue();
+
+        assertEquals(1, service.getLength());
+        assertSame(firstElement, elementWillBeDeleted);
+        assertSame(secondElement, service.getFirst());
+    }
 }
