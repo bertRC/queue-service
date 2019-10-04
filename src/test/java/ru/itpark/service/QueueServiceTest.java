@@ -88,8 +88,8 @@ class QueueServiceTest {
 
     @Test
     public void shouldGetFirstAndRemoveFromQueue() {
-        QueueElement firstElement = new QueueElement("Рђ001");
-        QueueElement secondElement = new QueueElement("Рџ002");
+        QueueElement firstElement = new QueueElement("A001");
+        QueueElement secondElement = new QueueElement("B002");
         QueueService service = new QueueService();
         service.addToTheEnd(firstElement);
         service.addToTheEnd(secondElement);
