@@ -49,4 +49,14 @@ public class QueueService {
             element.setNext(newElement);
         }
     }
+
+    public QueueElement getFirstAndRemoveFromQueue() {
+        if (first == null) {
+            return null;
+        } else {
+            QueueElement element = first;
+            first = first.getNext();
+            return element;
+        }
+    }
 }
