@@ -76,4 +76,13 @@ class QueueServiceTest {
         assertEquals(3, service.getLength());
         assertSame(thirdElement, service.findLast());
     }
+
+    @Test
+    public void shouldGetFirstAndRemoveFromEmptyQueue() {
+        QueueService service = new QueueService();
+
+        QueueElement elementWillBeDeleted = service.getFirstAndRemoveFromQueue();
+
+        assertSame(null, elementWillBeDeleted);
+    }
 }
