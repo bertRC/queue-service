@@ -37,4 +37,18 @@ class QueueServiceTest {
 
         assertSame(null, last);
     }
+    @Test
+    public void shouldFindLast() {
+        QueueElement firstElement = new QueueElement("Рђ001");
+        QueueElement secondElement = new QueueElement("Рџ002");
+        QueueElement thirdElement = new QueueElement("Р’003");
+        QueueService service = new QueueService();
+        service.setFirst(firstElement);
+        firstElement.setNext(secondElement);
+        secondElement.setNext(thirdElement);
+
+        QueueElement last = service.findLast();
+
+        assertSame(thirdElement, last);
+    }
 }
