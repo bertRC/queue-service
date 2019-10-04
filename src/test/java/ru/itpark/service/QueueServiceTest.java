@@ -100,4 +100,13 @@ class QueueServiceTest {
         assertSame(firstElement, elementWillBeDeleted);
         assertSame(secondElement, service.getFirst());
     }
+
+    @Test
+    public void shouldGetFirstNameAndRemoveFromEmptyQueue() {
+        QueueService service = new QueueService();
+
+        String name = service.getFirstNameAndRemoveFromQueue();
+
+        assertSame(null, name);
+    }
 }
