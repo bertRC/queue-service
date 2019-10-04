@@ -37,6 +37,7 @@ class QueueServiceTest {
 
         assertSame(null, last);
     }
+
     @Test
     public void shouldFindLast() {
         QueueElement firstElement = new QueueElement("Рђ001");
@@ -50,5 +51,16 @@ class QueueServiceTest {
         QueueElement last = service.findLast();
 
         assertSame(thirdElement, last);
+    }
+
+    @Test
+    public void shouldAddToTheEndForEmptyQueue() {
+        QueueElement newElement = new QueueElement("Рђ001");
+        QueueService service = new QueueService();
+
+        service.addToTheEnd(newElement);
+
+        assertEquals(1, service.getLength());
+        assertSame(newElement, service.findLast());
     }
 }
