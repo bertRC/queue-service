@@ -40,9 +40,9 @@ class QueueServiceTest {
 
     @Test
     public void shouldFindLast() {
-        QueueElement firstElement = new QueueElement("Рђ001");
-        QueueElement secondElement = new QueueElement("Рџ002");
-        QueueElement thirdElement = new QueueElement("Р’003");
+        QueueElement firstElement = new QueueElement("A001");
+        QueueElement secondElement = new QueueElement("B002");
+        QueueElement thirdElement = new QueueElement("C003");
         QueueService service = new QueueService();
         service.setFirst(firstElement);
         firstElement.setNext(secondElement);
@@ -55,7 +55,7 @@ class QueueServiceTest {
 
     @Test
     public void shouldAddToTheEndForEmptyQueue() {
-        QueueElement newElement = new QueueElement("Рђ001");
+        QueueElement newElement = new QueueElement("A001");
         QueueService service = new QueueService();
 
         service.addToTheEnd(newElement);
