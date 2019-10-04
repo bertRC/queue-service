@@ -21,4 +21,16 @@ public class QueueService {
         return length;
     }
 
+    public QueueElement findLast() {
+        if (first == null) {
+            return null;
+        } else {
+            QueueElement element = first;
+            while (element.getNext() != null) {
+                element = element.getNext();
+            }
+            return element;
+        }
+    }
+
 }
