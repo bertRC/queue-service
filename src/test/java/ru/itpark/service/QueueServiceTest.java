@@ -63,4 +63,17 @@ class QueueServiceTest {
         assertEquals(1, service.getLength());
         assertSame(newElement, service.findLast());
     }
+
+    @Test
+    public void shouldAddToTheEnd() {
+        QueueElement thirdElement = new QueueElement("C003");
+        QueueService service = new QueueService();
+
+        service.addToTheEnd("A001");
+        service.addToTheEnd("B002");
+        service.addToTheEnd(thirdElement);
+
+        assertEquals(3, service.getLength());
+        assertSame(thirdElement, service.findLast());
+    }
 }
