@@ -59,4 +59,13 @@ public class QueueService {
             return element;
         }
     }
+
+    public String getFirstNameAndRemoveFromQueue() {
+        if (first == null) {
+            return null;
+        } else {
+            QueueElement element = this.getFirstAndRemoveFromQueue();
+            return element.getPerson().getName();
+        }
+    }
 }
