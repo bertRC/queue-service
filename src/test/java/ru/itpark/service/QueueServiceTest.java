@@ -20,4 +20,13 @@ class QueueServiceTest {
         assertEquals(3, queueLength);
     }
 
+    @Test
+    public void shouldGetLengthForEmptyQueue() {
+        QueueService service = new QueueService();
+
+        int queueLength = service.getLength();
+
+        assertEquals(0, queueLength);
+    }
+
 }
