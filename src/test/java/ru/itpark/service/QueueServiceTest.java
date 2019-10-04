@@ -29,4 +29,12 @@ class QueueServiceTest {
         assertEquals(0, queueLength);
     }
 
+    @Test
+    public void shouldFindLastForEmptyQueue() {
+        QueueService service = new QueueService();
+
+        QueueElement last = service.findLast();
+
+        assertSame(null, last);
+    }
 }
